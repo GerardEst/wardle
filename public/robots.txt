@@ -1,0 +1,4 @@
+# robots.txt
+
+# Sitemap location (optional - update with your actual sitemap URL)
+Sitemap: https://mooot.cat/sitemap.xml

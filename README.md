@@ -1,0 +1,1 @@
+Un wordle en català
