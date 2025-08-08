@@ -157,7 +157,7 @@ describe('timetrial', () => {
             { row: 1, word: 'TESTS', date: new Date().toISOString() },
         ]
 
-        localStorage.setItem('moootGameData', JSON.stringify(storedGame))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(storedGame))
         localStorage.setItem('todayTime', '00:00:10') // Simulate a 10 second game
 
         await loadStoredGame()
@@ -252,7 +252,7 @@ describe('timetrial', () => {
     })
 
     it('should be cleaned up on every new day', () => {
-        localStorage.setItem('moootGameData', JSON.stringify([]))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify([]))
         localStorage.setItem('timetrial-start', new Date().toISOString())
         localStorage.setItem('todayTime', '00:00:10')
 
@@ -264,7 +264,7 @@ describe('timetrial', () => {
         runStorageCheck()
 
         // Check if localStorage is cleared
-        expect(localStorage.getItem('moootGameData')).toBeNull()
+        expect(localStorage.getItem('wardle_es_gamedata')).toBeNull()
         expect(localStorage.getItem('timetrial-start')).toBeNull()
     })
 })

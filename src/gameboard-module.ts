@@ -97,7 +97,7 @@ export function validateLastRow() {
             editLinkToDictionary(words.getTodayNiceWord())
         }, 1000)
     } else if (rowStatus === 'invalid') {
-        showFeedback('No és una paraula vàlida')
+        showFeedback('No és una palabra válida')
         currentColumn = 1
         cleanRow(currentRow)
     } else {

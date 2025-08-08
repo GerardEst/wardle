@@ -14,7 +14,7 @@ export interface storedRow {
 }
 
 export async function loadStoredGame() {
-    const storedData = localStorage.getItem('moootGameData')
+    const storedData = localStorage.getItem('wardle_es_gamedata')
     if (storedData) {
         const storedGame = JSON.parse(storedData)
         await loadWordsData()
@@ -59,19 +59,19 @@ export function saveToLocalStorage(word: string, row: number) {
         date: new Date().toISOString(),
     }
 
-    const currentStored = localStorage.getItem('moootGameData')
+    const currentStored = localStorage.getItem('wardle_es_gamedata')
 
     if (currentStored) {
         const savedData = JSON.parse(currentStored)
         savedData.push(dataToSave)
-        localStorage.setItem('moootGameData', JSON.stringify(savedData))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedData))
     } else {
-        localStorage.setItem('moootGameData', JSON.stringify([dataToSave]))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify([dataToSave]))
     }
 }
 
 export function runStorageCheck() {
-    const storedGame = localStorage.getItem('moootGameData')
+    const storedGame = localStorage.getItem('wardle_es_gamedata')
     if (storedGame) {
         const storedGameData = JSON.parse(storedGame)
         const storedGameTime = storedGameData[0]?.date
@@ -86,7 +86,7 @@ export function checkCleanLocalStorage(localDate: string) {
 
     if (date.toDateString() !== today.toDateString()) {
         console.warn('Saved data is not from today, clearing')
-        localStorage.removeItem('moootGameData')
+        localStorage.removeItem('wardle_es_gamedata')
         localStorage.removeItem('timetrial-start')
         localStorage.removeItem('todayTime')
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,44 +10,40 @@
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
 
-        <title>Mooot - Wordle en català</title>
+        <title>Wardle - Compite en Wordle con tus amigos en ligas mensuales</title>
         <meta
             name="description"
-            content="Mooot és un joc de paraules en català inspirat en Wordle. Endevina la paraula de 5 lletres en 6 intents. Una nova paraula cada dia!"
+            content="Ligas wordle és un juego de palabras en español inspirado en Wordle, que permite añadir un bot a un grupo de telegram para competir en ligas mensuales, dar premios, añadir personajes y más!"
         />
         <meta
             name="keywords"
-            content="mooot, joc paraules, català, wordle català, endevina paraula, joc diari, llengua catalana"
+            content="wardle, ligas wordle, juego palabras, español, wordle español, adivina palabra, juego diario, lengua española"
         />
-        <meta name="author" content="Mooot" />
+        <meta name="author" content="Ligas Wordle" />
 
-        <link rel="canonical" href="https://mooot.cat" />
+        <link rel="canonical" href="https://wardle.es" />
         <link rel="stylesheet" href="./style.css" />
 
         <link rel="icon" href="/favicon.png" />
 
         <script src="./main.ts" type="module"></script>
-
-        <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9509597642068942"
-            crossorigin="anonymous"
-        ></script>
     </head>
     <body>
         <header>
-            <img
+            <div></div>
+            <!-- <img
                 fetchpriority="high"
                 class="flag"
                 src="/assets/flag.jpg"
-                alt="Mooot Logo"
-            />
+                alt="Ligas Wordle Logo"
+            /> -->
             <div class="header__logo">
-                <span>M</span>
-                <span>O</span>
-                <span>O</span>
-                <span>O</span>
-                <span>T</span>
+                <span>W</span>
+                <span>A</span>
+                <span>R</span>
+                <span>D</span>
+                <span>L</span>
+                <span>E</span>
             </div>
             <div id="openMenu" class="openMenuButton">
                 <img alt="Obrir menu" width="20" src="/assets/menu.svg" />
@@ -124,7 +120,7 @@
                 <div class="keyboard__key" data-key="J">J</div>
                 <div class="keyboard__key" data-key="K">K</div>
                 <div class="keyboard__key" data-key="L">L</div>
-                <div class="keyboard__key" data-key="Ç">Ç</div>
+                <div class="keyboard__key" data-key="Ñ">Ñ</div>
             </div>
             <div class="keyboard__row">
                 <div
@@ -149,22 +145,23 @@
         <section class="menu">
             <div class="menu__content">
                 <header class="menu__content__header">
-                    <img
-                        alt="Bandera de l'idioma"
+                    <div></div>
+                    <!-- <img
+                        alt="Bandera del idioma"
                         class="flag"
                         src="/assets/flag.jpg"
-                        alt="Mooot Logo"
-                    />
+                        alt="Ligas Wordle Logo"
+                    /> -->
                     <div class="header__logo">
                         <span>D</span>
                         <span>A</span>
-                        <span>D</span>
-                        <span>E</span>
+                        <span>T</span>
+                        <span>O</span>
                         <span>S</span>
                     </div>
                     <div id="closeMenu" class="closeMenu">
                         <img
-                            alt="Tancar menu"
+                            alt="Cerrar menu"
                             width="20"
                             src="/assets/close.svg"
                         />
@@ -173,41 +170,35 @@
                 <div class="menu__stats">
                     <section class="stats">
                         <div class="pointedRow">
-                            <p>Partides jugades</p>
+                            <p>Partidas jugadas</p>
                             <span></span>
                             <p id="menustats-games"></p>
                         </div>
                         <div class="pointedRow">
-                            <p>Punts totals</p>
+                            <p>Puntos totales</p>
                             <span></span>
                             <p id="menustats-totalPoints"></p>
                         </div>
                         <div class="pointedRow">
-                            <p>Mitjana de punts</p>
+                            <p>Media de puntos</p>
                             <span></span>
                             <p id="menustats-averagePoints"></p>
                         </div>
                         <div class="pointedRow">
-                            <p>Ratxa actual</p>
+                            <p>Racha actual</p>
                             <span></span>
                             <p id="menustats-streak"></p>
                         </div>
                         <div class="pointedRow">
-                            <p>Ratxa màxima</p>
+                            <p>Racha máxima</p>
                             <span></span>
                             <p id="menustats-maxStreak"></p>
                         </div>
                     </section>
                 </div>
                 <div class="menu__motbot">
-                    <img
-                        alt="Logo Moootbot"
-                        class="moootbot_badge"
-                        width="60"
-                        src="public/assets/moootbot_M.png"
-                    />
                     <div class="menu__motbot__header">
-                        <h3>Lliga activa de <i>Moootbot</i></h3>
+                        <h3>Liga activa</h3>
                     </div>
                     <div class="menu__motbot__row">
                         <div>
@@ -217,55 +208,44 @@
                     </div>
                     <div class="motbot_trophies">
                         <div class="pointedRow">
-                            <p>Primer premi</p>
+                            <p>Primer premio</p>
                             <span></span>
                             <p>🥇🥃 Ratafia d'or</p>
                         </div>
                         <div class="pointedRow">
-                            <p>Segon premi</p>
+                            <p>Segundo premio</p>
                             <span></span>
                             <p>🥈🍺 Birra de plata</p>
                         </div>
                         <div class="pointedRow">
-                            <p>Tercer premi</p>
+                            <p>Tercer premio</p>
                             <span></span>
                             <p>🥉🍹 Cubata de bronze</p>
                         </div>
                     </div>
-                    <!-- <div>
-                        <p>Top mundial</p>
-                        <p>Saroa - 72 punts</p>
-                        <p>Gerard - 65 punts</p>
-                        <p>Rosa Maria - 56 punts</p>
-                    </div> -->
                     <div class="moootbotCallout">
                         <p style="line-height: 1.5">
-                            Crea una lliga privada en un grup de Telegram, sense
-                            registres, amb <strong>Moootbot</strong>
+                            Crea una liga privada en un grupo de Telegram, sin registros, añadiendo <strong>wardle_es_bot</strong>
                         </p>
                         <div class="callout_buttons">
                             <a
                                 class="button"
                                 href="https://t.me/mooot_cat_bot?startgroup=true"
-                                >Crea una lliga</a
+                                >Crea una liga</a
                             >
-                            <a class="button" href="./bot">Més informació</a>
+                            <a class="button" href="./bot">Más información</a>
                         </div>
                     </div>
                 </div>
                 <div class="divider"></div>
                 <div class="menu__section">
                     <p class="smallText">
-                        Basat en el joc
+                        Basado en el juego
                         <a
                             href="https://www.nytimes.com/games/wordle/index.html"
                             >Wordle</a
                         >
                         de <a href="https://www.nytco.com/">TNYT</a>
-                    </p>
-                    <p class="smallText">
-                        Llistat de paraules extret del
-                        <a href="https://diccionari.totescrable.cat/">DISC</a>
                     </p>
                 </div>
             </div>
@@ -285,7 +265,7 @@
                 </div>
                 <section class="stats">
                     <div class="pointedRow">
-                        <p>Paraula</p>
+                        <p>Palabra</p>
                         <span></span>
                         <a id="dicLink" target="_blank" href="#"
                             ><span id="stats-word"></span>
@@ -295,51 +275,51 @@
                         /></a>
                     </div>
                     <div class="pointedRow">
-                        <p>Punts</p>
+                        <p>Puntos</p>
                         <span></span>
                         <p>+<span id="stats-points"></span></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Temps</p>
+                        <p>Tiempo</p>
                         <span></span>
                         <p><span id="stats-time"></span></p>
                     </div>
                 </section>
                 <section class="stats">
                     <div class="pointedRow">
-                        <p>Partides jugades</p>
+                        <p>Partidas jugadas</p>
                         <span></span>
                         <p id="stats-games"></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Punts totals</p>
+                        <p>Puntos totales</p>
                         <span></span>
                         <p id="stats-totalPoints"></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Mitjana de punts</p>
+                        <p>Media de puntos</p>
                         <span></span>
                         <p id="stats-averagePoints"></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Mitjana de temps</p>
+                        <p>Media de tiempo</p>
                         <span></span>
                         <p id="stats-averageTime"></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Ratxa actual</p>
+                        <p>Racha actual</p>
                         <span></span>
                         <p id="stats-streak"></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Ratxa màxima</p>
+                        <p>Racha máxima</p>
                         <span></span>
                         <p id="stats-maxStreak"></p>
                     </div>
                 </section>
                 <div class="modal__buttons">
                     <button class="button--danger" id="shareOpen">
-                        Compartir intents
+                        Compartir intentos
                         <img alt="Perill" src="/assets/caution.svg" />
                     </button>
                     <button id="share">
@@ -347,7 +327,6 @@
                         <img alt="Compartir" src="/assets/share.svg" />
                     </button>
                 </div>
-                <!-- <p>Afegeix el bot <a href="https://github.com/GerardEst/mooot_cat_bot#user-content-translations" target="_blank">moootbot</a> a un grup de Telegram i competeix en lligues mensuals amb els teus amics</p> -->
             </div>
         </section>
     </body>

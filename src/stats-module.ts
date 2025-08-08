@@ -61,18 +61,18 @@ export function fillModalStats(todayPoints: number, todayTime: string | null) {
     updateStat(
         'title',
         todayPoints === 6
-            ? '🤨 ESCANDALÓS!'
+            ? '🤨 ESCANDALÓSO!'
             : todayPoints === 5
             ? '🏆 Increíble!'
             : todayPoints === 4
-            ? '🤯 Impresionant!'
+            ? '🤯 Impresionante!'
             : todayPoints === 3
-            ? '😎 Molt bé!'
+            ? '😎 Muy bien!'
             : todayPoints === 2
-            ? '😐 Fet!'
+            ? '😐 Hecho!'
             : todayPoints === 1
-            ? '😭 Pels pèls!'
-            : '💩 Vaja...'
+            ? '😭 Por los pelos!'
+            : '💩 Vaya...'
     )
     updateStat('word', getTodayNiceWord())
     updateStat('points', todayPoints.toString())
@@ -107,7 +107,7 @@ export function updateMenuData() {
 
 export function editLinkToDictionary(word: string) {
     const dicLink = document.querySelector('#dicLink')
-    const dicUrl = `https://dlc.iec.cat/Results?DecEntradaText=${word}&AllInfoMorf=False&OperEntrada=0&OperDef=0&OperEx=0&OperSubEntrada=0&OperAreaTematica=0&InfoMorfType=0&OperCatGram=False&AccentSen=False&CurrentPage=0&refineSearch=0&Actualitzacions=False`
+    const dicUrl = `https://dle.rae.es/${word}?m=form`
 
     if (!dicLink) {
         console.warn('Cant find dicLink')

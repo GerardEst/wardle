@@ -230,7 +230,7 @@ describe('share-utils', () => {
         //         { word: 'ROUSE', row: 5, date: new Date().toISOString() },
         //         { word: 'SOUSE', row: 6, date: new Date().toISOString() }, // Wrong answer on 6th try
         //     ]
-        //     localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+        //     localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
         //     // Call the function
         //     await loadStoredGame()

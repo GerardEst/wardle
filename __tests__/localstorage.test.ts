@@ -99,7 +99,7 @@ describe('cleanGameOnNewDays', () => {
                 },
             ]
 
-            localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+            localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
             // Verify part of the initial state
             expect(cell1?.textContent).toBe('A')
@@ -109,13 +109,13 @@ describe('cleanGameOnNewDays', () => {
             expect(cell3?.classList.contains('absent')).toBe(true)
             expect(keyA?.classList.contains('correct')).toBe(true)
             expect(keyB?.classList.contains('present')).toBe(true)
-            expect(localStorage.getItem('moootGameData')).not.toBeNull()
+            expect(localStorage.getItem('wardle_es_gamedata')).not.toBeNull()
 
             // Use tested function
             runStorageCheck()
 
             // Verification
-            expect(localStorage.getItem('moootGameData')).toBeNull()
+            expect(localStorage.getItem('wardle_es_gamedata')).toBeNull()
 
             expect(cell1).toBeEmptyDOMElement()
             expect(cell2).toBeEmptyDOMElement()
@@ -157,13 +157,13 @@ describe('cleanGameOnNewDays', () => {
                 },
             ]
 
-            localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+            localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
             // Call the actual function
             runStorageCheck()
 
             // Verification
-            expect(localStorage.getItem('moootGameData')).not.toBeNull()
+            expect(localStorage.getItem('wardle_es_gamedata')).not.toBeNull()
 
             expect(cell1).toHaveTextContent('A')
             expect(cell1).toHaveClass('correct')
@@ -343,7 +343,7 @@ describe('loadStoredGame', () => {
             },
         ]
 
-        localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
         // Call the function
         await loadStoredGame()
@@ -388,9 +388,9 @@ describe('loadStoredGame', () => {
 
         validateLastRow()
 
-        expect(localStorage.getItem('moootGameData')).not.toBeNull()
+        expect(localStorage.getItem('wardle_es_gamedata')).not.toBeNull()
         expect(
-            JSON.parse(localStorage.getItem('moootGameData') || '[]')
+            JSON.parse(localStorage.getItem('wardle_es_gamedata') || '[]')
         ).toEqual([
             {
                 word: 'HOUSE',
@@ -415,7 +415,7 @@ describe('loadStoredGame', () => {
             },
         ]
 
-        localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
         // Call the function
         await loadStoredGame()
@@ -441,7 +441,7 @@ describe('loadStoredGame', () => {
             { word: 'SOUSE', row: 6, date: new Date().toISOString() }, // Wrong answer on 6th try
         ]
 
-        localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
         // Call the function
         await loadStoredGame()
@@ -473,7 +473,7 @@ describe('loadStoredGame', () => {
             },
         ]
 
-        localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
         // Call the function
         await loadStoredGame()
@@ -504,7 +504,7 @@ describe('loadStoredGame', () => {
             },
         ]
 
-        localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
         // Call the function
         await loadStoredGame()
@@ -532,7 +532,7 @@ describe('loadStoredGame', () => {
             },
         ]
 
-        localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
         // Call the function
         await loadStoredGame()
@@ -565,7 +565,7 @@ describe('loadStoredGame', () => {
             },
         ]
 
-        localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
         // Call the function
         await loadStoredGame()
@@ -613,7 +613,7 @@ describe('loadStoredGame', () => {
             },
         ]
 
-        localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
         // Call the function
         await loadStoredGame()
@@ -656,7 +656,7 @@ describe('loadStoredGame', () => {
             { word: 'SOUSE', row: 6, date: new Date().toISOString() }, // Wrong answer on 6th try
         ]
 
-        localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
         // Call the function
         await loadStoredGame()
@@ -682,7 +682,7 @@ describe('loadStoredGame', () => {
             },
         ]
 
-        localStorage.setItem('moootGameData', JSON.stringify(savedGameData))
+        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedGameData))
 
         // Call the function
         await loadStoredGame()

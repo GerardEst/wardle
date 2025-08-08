@@ -333,15 +333,6 @@ header {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            & .moootbot_badge {
-                position: absolute;
-                top: -20px;
-                right: -20px;
-                transform: rotate(14deg);
-                /* background-color: var(--button-danger-color); */
-                border-radius: 100%;
-                padding: 0.3rem;
-            }
             & .menu__motbot__header {
                 display: flex;
             }

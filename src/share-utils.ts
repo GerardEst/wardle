@@ -34,9 +34,9 @@ export function shareResult(
     time: string
 ) {
     const resultPattern = buildResultPattern(open, tries)
-    const shareTitle = `#mooot ${wordIndex}`
+    const shareTitle = `#wardle ${wordIndex}`
     const shareTries = tries === 7 ? 'X/6' : tries + '/6'
-    const resultText = `${shareTitle}\n🎯 ${shareTries}\n⏳ ${time}\n\n${resultPattern}\nmooot.cat`
+    const resultText = `${shareTitle}\n🎯 ${shareTries}\n⏳ ${time}\n\n${resultPattern}\nwardle.es`
 
     //const noLinkPreview = resultText.replace(/https?:\/\//g, '$&\u200B')
     if (isMobileDevice() && navigator.share) {
@@ -51,7 +51,7 @@ export function shareResult(
         copyToClipboard(resultText).catch((error) => {
             console.error('Error copying to clipboard:', error)
         })
-        showFeedback("Resultat copiat, enganxa'l on vulguis compartir-lo")
+        showFeedback("Resultado copiado, pegalo donde quieras compartirlo")
     }
 }
 
