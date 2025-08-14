@@ -27,7 +27,7 @@ export async function fetchDictionary() {
         return dicc
     }
 
-    const diccFetch = await fetch('/assets/dicc.json', {
+    const diccFetch = await fetch('/assets/es/dicc.json', {
         cache: 'force-cache',
     })
     const diccJson = await diccFetch.json()
@@ -54,7 +54,7 @@ export async function loadWordsData() {
 export async function fetchWords() {
     console.log('Fetching all the possible words')
 
-    const wordsFetch = await fetch('/assets/words.json')
+    const wordsFetch = await fetch('/assets/es/words.json')
     allWords = await wordsFetch.json()
 
     return allWords
