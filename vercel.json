@@ -1,8 +1,6 @@
 {
-    "cleanUrls": true,
-    "trailingSlash": false,
     "rewrites": [
-        { "source": "/bot/(.*)", "destination": "/bot/index.html" },
-        { "source": "/(.*)", "destination": "/index.html" }
+        { "source": "/bot/:path*", "destination": "/bot/index.html" },
+        { "source": "/(.*)", "destination": "/" }
     ]
 }
