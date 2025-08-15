@@ -1,5 +1,7 @@
 {
     "rewrites": [
+        { "source": "/es/bot/:path*", "destination": "/es/bot/index.html" },
+        { "source": "/en/bot/:path*", "destination": "/en/bot/index.html" },
         { "source": "/bot/:path*", "destination": "/bot/index.html" },
         { "source": "/(.*)", "destination": "/" }
     ]

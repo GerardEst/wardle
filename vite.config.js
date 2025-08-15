@@ -22,7 +22,9 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
-                bot: resolve(__dirname, 'bot/index.html'),
+                bot: resolve(__dirname, 'es/bot/index.html'),
+                'es-bot': resolve(__dirname, 'es/bot/index.html'),
+                'en-bot': resolve(__dirname, 'en/bot/index.html'),
             },
         },
     },

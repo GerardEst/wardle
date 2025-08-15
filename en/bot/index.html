@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta
+            http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate"
+        />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <!-- SEO Meta Tags -->
+        <title>
+            Wardle Bot - Telegram Bot for Wordle Competitions with Friends
+        </title>
+        <meta
+            name="description"
+            content="Transform your Telegram group into a Wordle competition with monthly rankings, prizes, famous characters and much more."
+        />
+        <meta
+            name="keywords"
+            content="wordle, wordle league, wardle, telegram bot, word game, friends competition, monthly league, telegram bot, wardle_es_bot"
+        />
+        <meta name="author" content="Wardle" />
+        <meta
+            name="robots"
+            content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+
+        <!-- Hreflang and Canonical -->
+        <link rel="canonical" href="https://wardle.es/en/bot" />
+        <link rel="alternate" hreflang="es" href="https://wardle.es/es/bot" />
+        <link rel="alternate" hreflang="en" href="https://wardle.es/en/bot" />
+        <link rel="alternate" hreflang="x-default" href="https://wardle.es/es/bot" />
+
+        <!-- Open Graph Meta Tags -->
+        <meta
+            property="og:title"
+            content="Wardle Bot - Telegram Bot for Wordle Competitions with Friends"
+        />
+        <meta
+            property="og:description"
+            content="Transform your Telegram group into a Wordle competition with monthly rankings, prizes, famous characters and much more."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://wardle.es/en/bot" />
+        <meta
+            property="og:image"
+            content="https://wardle.es/assets/moootbot_L.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+            property="og:image:alt"
+            content="Wardle Bot - Telegram Bot for the Wardle game"
+        />
+        <meta property="og:site_name" content="Wardle" />
+        <meta property="og:locale" content="en_US" />
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Wardle Bot - Telegram Bot for Wordle Competitions"
+        />
+        <meta
+            name="twitter:description"
+            content="Transform your Telegram group into a Wordle competition with monthly rankings and prizes."
+        />
+        <meta
+            name="twitter:image"
+            content="https://wardle.es/assets/moootbot_L.png"
+        />
+        <meta
+            name="twitter:image:alt"
+            content="Wardle Bot - Telegram Bot for the Wardle game"
+        />
+
+        <!-- Additional SEO Meta Tags -->
+        <meta name="theme-color" content="#dc3545" />
+        <meta name="msapplication-TileColor" content="#dc3545" />
+        
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: #fff;
+            }
+            header {
+                & h1 {
+                    margin: 0;
+                    font-size: 24px;
+                    padding: 0;
+                    border: none;
+                }
+            }
+            h1,
+            h2,
+            h3 {
+                color: #333;
+                margin-top: 30px;
+                margin-bottom: 15px;
+            }
+            h1 {
+                font-size: 28px;
+                border-bottom: 2px solid #eee;
+                padding-bottom: 10px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            code {
+                background: #f6f8fa;
+                padding: 3px 6px;
+                border-radius: 3px;
+                font-family: 'Monaco', 'Menlo', monospace;
+                font-size: 14px;
+                color: #e83e8c;
+            }
+            ul,
+            ol {
+                padding-left: 20px;
+            }
+            li {
+                margin-bottom: 8px;
+            }
+            a {
+                color: #0366d6;
+            }
+        </style>
+
+        <link rel="icon" href="/favicon.png" />
+    </head>
+    <body>
+        <div
+            style="
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                    Roboto, sans-serif;
+                line-height: 1.6;
+                color: #333;
+            "
+        >
+            <header
+                style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 1px solid #eee;
+                    padding-bottom: 20px;
+                    margin-bottom: 40px;
+                "
+            >
+                <div style="display: flex; align-items: center; gap: 10px">
+                    <h1>Wardle Bot</h1>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <a
+                        href="/es/bot"
+                        style="padding: 4px 8px; text-decoration: none; color: #666; border: 1px solid #ddd; border-radius: 4px;"
+                        title="Versión en español"
+                        >🇪🇸 ES</a>
+                    <a
+                        href="/en"
+                        style="
+                            background: #dc3545;
+                            color: white;
+                            padding: 8px 16px;
+                            border-radius: 4px;
+                            text-decoration: none;
+                        "
+                        title="Go to Wardle"
+                        >Go to Wardle</a
+                    >
+                </div>
+            </header>
+
+            <main role="main" itemscope itemtype="https://schema.org/WebPage">
+                <h1 id="what-is-wardlebot">What is Wardle Bot</h1>
+                <p style="font-size: 18px; color: #666; margin-bottom: 20px">
+                    Compete in monthly Wordle leagues with friends using the most
+                    fun Telegram bot.
+                </p>
+                <p>
+                    This Telegram bot transforms any group into a
+                    <a
+                        href="/en"
+                        title="Play Wordle - Word Game"
+                        >Wordle</a
+                    > competition, with a monthly ranking updated daily,
+                    prizes for the best players, NPCs
+                    and much more.
+                </p>
+
+                <h2 id="how-it-works">How Wardle Bot Works</h2>
+
+                <h3 id="add-to-existing-chat">
+                    Option 1: Add to an existing chat
+                </h3>
+                <p>
+                    Click the following link to add Wardle Bot directly to
+                    your Telegram group:
+                </p>
+                <p>
+                    <a
+                        href="https://t.me/wardle_es_bot?startgroup=true"
+                        style="
+                            background: #28a745;
+                            color: white;
+                            padding: 12px 20px;
+                            border-radius: 6px;
+                            text-decoration: none;
+                            display: inline-block;
+                        "
+                        title="Add Wardle Bot to your Telegram group"
+                        rel="noopener"
+                        >Add Wardle Bot to a chat</a
+                    >
+                </p>
+
+                <h3 id="create-new-group">Option 2: Create a new group</h3>
+                <ol>
+                    <li>
+                        Create a Telegram group with the people you want to
+                        share games with.
+                    </li>
+                    <li>
+                        Add the bot <strong>"wardle_es_bot"</strong>
+                        <em>(Add a member → search for "wardle_es_bot")</em>
+                    </li>
+                </ol>
+
+                <blockquote
+                    style="
+                        background: #f8f9fa;
+                        border-left: 4px solid #007bff;
+                        padding: 15px;
+                        margin: 20px 0;
+                        border-radius: 0 4px 4px 0;
+                    "
+                >
+                    The bot will start working in the background, converting the group
+                    into a league and adding the following features:
+                </blockquote>
+
+                <h2 id="main-features">
+                    Main Features of Wardle Bot
+                </h2>
+
+                <h3 id="monthly-ranking">
+                    🏆 Monthly player ranking
+                </h3>
+                <p>
+                    Whenever a chat member shares their game,
+                    they receive a score ranging from 0 (if they didn't find
+                    the word) to 6 (if they found it on the first try).
+                    This creates a ranking with all chat
+                    members. At the end of each month, prizes are distributed to
+                    members who finished in the top 3 and a new
+                    league begins with scores reset to 0.
+                </p>
+                <p><code>/clasificacion</code> - Check the ranking</p>
+
+                <h3 id="prize-system">
+                    🥇 Virtual prize and trophy system
+                </h3>
+                <p>
+                    On the last day of the month, trophies are distributed to the three best
+                    players. Trophies vary depending on the current league,
+                    and are independent between different leagues - meaning if you participate
+                    in multiple leagues, you only have trophies within the chat of
+                    the league where you won them.
+                </p>
+                <p><code>/premios</code> - Check chat trophies</p>
+
+                <h3 id="famous-characters">🎭 Famous characters</h3>
+                <p>
+                    You can add famous characters who will play autonomously
+                    each day and score more or less depending on their
+                    skill - different characters have different skill levels,
+                    some will be very difficult to beat while
+                    others will always rank lower in the standings.
+                </p>
+                <p>
+                    <code>/agregar-personaje</code> - Add characters to the
+                    game
+                </p>
+                <p>
+                    <code>/eliminar-personaje</code> - Remove characters from
+                    the game
+                </p>
+
+                <h3 id="global-ranking">🌍 Global ranking</h3>
+                <p>
+                    At any time you can check the top 3 of the current
+                    league among all participants from all chats.
+                </p>
+                <p><code>/top</code> - Show global top 3</p>
+
+                <h3 id="automatic-reactions">😊 Automatic reactions</h3>
+                <p>
+                    When a game is shared, the bot reacts with an
+                    emoji to the message that varies depending on how good or bad
+                    the game was to provide visual confirmation that the
+                    game has been registered correctly.
+                </p>
+
+                <h2 id="available-commands">
+                    Available Wardle Bot Commands
+                </h2>
+                <ul>
+                    <li>
+                        <code>/clasificacion</code> - Show current league ranking
+                    </li>
+                    <li><code>/leyenda</code> - Show scoring table</li>
+                    <li>
+                        <code>/agregar-personaje</code> - Options to add
+                        characters to the game
+                    </li>
+                    <li>
+                        <code>/eliminar-personaje</code> - Options to remove
+                        a character from the game
+                    </li>
+                    <li>
+                        <code>/premios</code> - Check virtual trophies
+                        won and those at stake
+                    </li>
+                    <li>
+                        <code>/top</code> - Show top 3 players from all
+                        leagues
+                    </li>
+                </ul>
+
+                <h2 id="privacy">Data Usage and Privacy</h2>
+
+                <h3 id="required-permissions">Required permissions</h3>
+                <p>
+                    When adding Wardle Bot to a group, it is given access to all
+                    messages shared from that moment on. If
+                    this weren't the case, it couldn't react or save the games
+                    shared with it.
+                </p>
+
+                <h3 id="privacy-commitment">Privacy commitment</h3>
+                <p>
+                    No message is consulted or saved unless it's a
+                    shared game or a bot command.
+                </p>
+            </main>
+        </div>
+    </body>
+</html>

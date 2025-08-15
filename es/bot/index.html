@@ -17,7 +17,7 @@
         </title>
         <meta
             name="description"
-            content="Transforma tu grupo de Telegram en una competición de Wordle con clasificaciones mensuales, premios, personajes famosos i mucho más."
+            content="Transforma tu grupo de Telegram en una competición de Wordle con clasificaciones mensuales, premios, personajes famosos y mucho más."
         />
         <meta
             name="keywords"
@@ -29,53 +29,59 @@
             content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
 
+        <!-- Hreflang and Canonical -->
+        <link rel="canonical" href="https://wardle.es/es/bot" />
+        <link rel="alternate" hreflang="es" href="https://wardle.es/es/bot" />
+        <link rel="alternate" hreflang="en" href="https://wardle.es/en/bot" />
+        <link rel="alternate" hreflang="x-default" href="https://wardle.es/es/bot" />
+
         <!-- Open Graph Meta Tags -->
-        <!--<meta
+        <meta
             property="og:title"
-            content="Wardle - Bot de Telegram para competir en Wordle entre amigos"
+            content="Wardle Bot - Bot de Telegram para competir en Wordle entre amigos"
         />
         <meta
             property="og:description"
-            content="Transforma tu grupo de Telegram en una competición de Wordle con clasificaciones mensuales, premios, personajes famosos i mucho más."
+            content="Transforma tu grupo de Telegram en una competición de Wordle con clasificaciones mensuales, premios, personajes famosos y mucho más."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://mooot.cat/bot" />
+        <meta property="og:url" content="https://wardle.es/es/bot" />
         <meta
             property="og:image"
-            content="https://mooot.cat/assets/moootbot_og.png"
+            content="https://wardle.es/assets/moootbot_L.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta
             property="og:image:alt"
-            content="Moootbot - Bot de Telegram per al joc Mooot"
+            content="Wardle Bot - Bot de Telegram para el juego Wardle"
         />
-        <meta property="og:site_name" content="Mooot" />
-        <meta property="og:locale" content="ca_ES" /> -->
+        <meta property="og:site_name" content="Wardle" />
+        <meta property="og:locale" content="es_ES" />
 
         <!-- Twitter Card Meta Tags -->
-        <!-- <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
             name="twitter:title"
-            content="Moootbot - Bot de Telegram per competir al Mooot"
+            content="Wardle Bot - Bot de Telegram para competir en Wordle"
         />
         <meta
             name="twitter:description"
-            content="Transforma el teu grup de Telegram en una competició del Mooot amb classificacions mensuals i premis."
+            content="Transforma tu grupo de Telegram en una competición de Wordle con clasificaciones mensuales y premios."
         />
         <meta
             name="twitter:image"
-            content="https://mooot.cat/assets/moootbot_og.png"
+            content="https://wardle.es/assets/moootbot_L.png"
         />
         <meta
             name="twitter:image:alt"
-            content="Moootbot - Bot de Telegram per al joc Mooot"
-        /> -->
+            content="Wardle Bot - Bot de Telegram para el juego Wardle"
+        />
 
         <!-- Additional SEO Meta Tags -->
-        <!-- <meta name="theme-color" content="#dc3545" />
+        <meta name="theme-color" content="#dc3545" />
         <meta name="msapplication-TileColor" content="#dc3545" />
-        <link rel="canonical" href="https://mooot.cat/bot" /> -->
+        
         <style>
             body {
                 margin: 0;
@@ -128,7 +134,7 @@
             }
         </style>
 
-        <link rel="icon" href="./favicon.png" />
+        <link rel="icon" href="/favicon.png" />
     </head>
     <body>
         <div
@@ -155,19 +161,25 @@
                 <div style="display: flex; align-items: center; gap: 10px">
                     <h1>Wardle Bot</h1>
                 </div>
-                <a
-                    href="/"
-                    style="
-                        background: #dc3545;
-                        color: white;
-                        padding: 8px 16px;
-                        border-radius: 4px;
-                        text-decoration: none;
-                    "
-                    title="Vuelve a Wardle"
-                    hreflang="es"
-                    >Ir a Wardle</a
-                >
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <a
+                        href="/en/bot"
+                        style="padding: 4px 8px; text-decoration: none; color: #666; border: 1px solid #ddd; border-radius: 4px;"
+                        title="English version"
+                        >🇺🇸 EN</a>
+                    <a
+                        href="/es"
+                        style="
+                            background: #dc3545;
+                            color: white;
+                            padding: 8px 16px;
+                            border-radius: 4px;
+                            text-decoration: none;
+                        "
+                        title="Vuelve a Wardle"
+                        >Ir a Wardle</a
+                    >
+                </div>
             </header>
 
             <main role="main" itemscope itemtype="https://schema.org/WebPage">
@@ -180,9 +192,8 @@
                     Este bot de Telegram transforma cualquier grupo en una
                     competición de
                     <a
-                        href="/"
+                        href="/es"
                         title="Juega al Wordle - Juego de palabras"
-                        hreflang="es"
                         >Wordle</a
                     >, con una clasificación mensual actualizada diariamente,
                     premios para los mejores jugadores, NPCs
