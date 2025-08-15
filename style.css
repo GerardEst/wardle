@@ -118,6 +118,32 @@ header {
         margin-right: -15px;
         justify-self: flex-end;
     }
+    & > .languageSelectorContainer {
+        justify-self: flex-start;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.languageSelector {
+    background: var(--cell);
+    border: 1px solid var(--cell-border);
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    min-width: 80px;
+}
+
+.languageSelector:hover {
+    background: var(--color-green-success);
+    border-color: var(--color-green-success--border);
+}
+
+.languageSelector:focus {
+    box-shadow: 0 0 0 2px var(--color-green-success--border);
 }
 
 .wordgrid {

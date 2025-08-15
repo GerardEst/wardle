@@ -8,6 +8,11 @@ import * as gameboard from './src/gameboard-module.ts'
 import { updateMenuData } from './src/stats-module.js'
 import { shareResult } from './src/share-utils.ts'
 import { closeMenu, closeModal, openMenu } from './src/dom-utils.ts'
+import { initializeLanguage, switchLanguage } from './src/language-module'
+//import { Language } from './src/translations.ts'
+
+// Initialize language first
+initializeLanguage()
 
 // We run storage checks at web loading and when visibilitychange
 // to ensure even with cached content and not closing pages, it refreshes every day
@@ -20,11 +25,27 @@ document.addEventListener('visibilitychange', () => {
 
 async function init() {
     initDOMEvents()
+    initLanguageChangeListener()
     loadStoredGame()
     updateMenuData()
 }
 
 init()
+
+function initLanguageChangeListener() {
+    document.addEventListener('languageChanged', async () => {
+        // Reset game state and reload data for new language
+        gameboard.resetGameState()
+        words.resetLanguageCache()
+
+        // Update keyboard visibility
+        gameboard.updateKeyboardLayout()
+
+        // Reload game for new language with modal delay
+        await loadStoredGame(true)
+        updateMenuData()
+    })
+}
 
 function initDOMEvents() {
     const keys = document.querySelectorAll('.keyboard__key')
@@ -35,6 +56,7 @@ function initDOMEvents() {
     const modalCloseButton = document.querySelector('#modal-close')
     const menuCloseButton = document.querySelector('#closeMenu')
     const menuOpenButton = document.querySelector('#openMenu')
+    const selector = document.querySelector('#languageSelector')
 
     keys!.forEach((key) => {
         key.addEventListener('click', (event) => {
@@ -66,6 +88,12 @@ function initDOMEvents() {
             gameboard.currentTry,
             getTodayTime()
         )
+    })
+
+    // Language events
+    selector!.addEventListener('change', (e) => {
+        const newLang = (e.target as HTMLSelectElement).value as Language
+        switchLanguage(newLang)
     })
 
     // Modal events

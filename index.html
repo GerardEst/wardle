@@ -10,7 +10,9 @@
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
 
-        <title>Wardle - Compite en Wordle con tus amigos en ligas mensuales</title>
+        <title>
+            Wardle - Compite en Wordle con tus amigos en ligas mensuales
+        </title>
         <meta
             name="description"
             content="Ligas wordle és un juego de palabras en español inspirado en Wordle, que permite añadir un bot a un grupo de telegram para competir en ligas mensuales, dar premios, añadir personajes y más!"
@@ -30,13 +32,12 @@
     </head>
     <body>
         <header>
-            <div></div>
-            <!-- <img
-                fetchpriority="high"
-                class="flag"
-                src="/assets/flag.jpg"
-                alt="Ligas Wordle Logo"
-            /> -->
+            <div class="languageSelectorContainer">
+                <select id="languageSelector" class="languageSelector">
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="en">🇺🇸 EN</option>
+                </select>
+            </div>
             <div class="header__logo">
                 <span>W</span>
                 <span>A</span>
@@ -46,7 +47,7 @@
                 <span>E</span>
             </div>
             <div id="openMenu" class="openMenuButton">
-                <img alt="Obrir menu" width="20" src="/assets/menu.svg" />
+                <img data-i18n-alt="altOpenMenu" alt="Obrir menu" width="20" src="/assets/menu.svg" />
             </div>
         </header>
         <section class="feedback">
@@ -127,7 +128,7 @@
                     class="keyboard__enter keyboard__key--wide"
                     data-key="enter"
                 >
-                    <img alt="Intro teclat" src="/assets/intro.svg" />
+                    <img data-i18n-alt="altIntro" alt="Intro teclat" src="/assets/intro.svg" />
                 </div>
                 <div class="keyboard__key" data-key="Z">Z</div>
                 <div class="keyboard__key" data-key="X">X</div>
@@ -137,7 +138,7 @@
                 <div class="keyboard__key" data-key="N">N</div>
                 <div class="keyboard__key" data-key="M">M</div>
                 <div class="keyboard__back keyboard__key--wide" data-key="back">
-                    <img alt="Esborrar teclat" src="/assets/backspace.svg" />
+                    <img data-i18n-alt="altBackspace" alt="Esborrar teclat" src="/assets/backspace.svg" />
                 </div>
             </div>
         </section>
@@ -152,7 +153,7 @@
                         src="/assets/flag.jpg"
                         alt="Ligas Wordle Logo"
                     /> -->
-                    <div class="header__logo">
+                    <div class="header__logo" data-i18n-letters="dataTitle">
                         <span>D</span>
                         <span>A</span>
                         <span>T</span>
@@ -161,6 +162,7 @@
                     </div>
                     <div id="closeMenu" class="closeMenu">
                         <img
+                            data-i18n-alt="altCloseMenu"
                             alt="Cerrar menu"
                             width="20"
                             src="/assets/close.svg"
@@ -170,27 +172,27 @@
                 <div class="menu__stats">
                     <section class="stats">
                         <div class="pointedRow">
-                            <p>Partidas jugadas</p>
+                            <p data-i18n="gamesPlayed">Partidas jugadas</p>
                             <span></span>
                             <p id="menustats-games"></p>
                         </div>
                         <div class="pointedRow">
-                            <p>Puntos totales</p>
+                            <p data-i18n="totalPoints">Puntos totales</p>
                             <span></span>
                             <p id="menustats-totalPoints"></p>
                         </div>
                         <div class="pointedRow">
-                            <p>Media de puntos</p>
+                            <p data-i18n="averagePoints">Media de puntos</p>
                             <span></span>
                             <p id="menustats-averagePoints"></p>
                         </div>
                         <div class="pointedRow">
-                            <p>Racha actual</p>
+                            <p data-i18n="currentStreak">Racha actual</p>
                             <span></span>
                             <p id="menustats-streak"></p>
                         </div>
                         <div class="pointedRow">
-                            <p>Racha máxima</p>
+                            <p data-i18n="maxStreak">Racha máxima</p>
                             <span></span>
                             <p id="menustats-maxStreak"></p>
                         </div>
@@ -198,54 +200,57 @@
                 </div>
                 <div class="menu__motbot">
                     <div class="menu__motbot__header">
-                        <h3>Liga activa</h3>
+                        <h3 data-i18n="activeLeague">Liga activa</h3>
                     </div>
                     <div class="menu__motbot__row">
                         <div>
-                            <h4>💃🏻 Lliga Major</h4>
-                            <p class="smallText">1 - 31 d'Agost</p>
+                            <h4 data-i18n="leagueName">💃🏻 Lliga Major</h4>
+                            <p class="smallText" data-i18n="leaguePeriod">1 - 31 d'Agost</p>
                         </div>
                     </div>
                     <div class="motbot_trophies">
                         <div class="pointedRow">
-                            <p>Primer premio</p>
+                            <p data-i18n="firstPrize">Primer premio</p>
                             <span></span>
-                            <p>🥇🥃 Ratafia d'or</p>
+                            <p data-i18n="firstPrizeContent">🥇🥃 Ratafia d'or</p>
                         </div>
                         <div class="pointedRow">
-                            <p>Segundo premio</p>
+                            <p data-i18n="secondPrize">Segundo premio</p>
                             <span></span>
-                            <p>🥈🍺 Birra de plata</p>
+                            <p data-i18n="secondPrizeContent">🥈🍺 Birra de plata</p>
                         </div>
                         <div class="pointedRow">
-                            <p>Tercer premio</p>
+                            <p data-i18n="thirdPrize">Tercer premio</p>
                             <span></span>
-                            <p>🥉🍹 Cubata de bronze</p>
+                            <p data-i18n="thirdPrizeContent">🥉🍹 Cubata de bronze</p>
                         </div>
                     </div>
                     <div class="moootbotCallout">
-                        <p style="line-height: 1.5">
-                            Crea una liga privada en un grupo de Telegram, sin registros, añadiendo <strong>wardle_es_bot</strong>
+                        <p style="line-height: 1.5" data-i18n="botDescription">
+                            Crea una liga privada en un grupo de Telegram, sin
+                            registros, añadiendo <strong>wardle_es_bot</strong>
                         </p>
                         <div class="callout_buttons">
                             <a
                                 class="button"
+                                data-i18n-href="telegramBotUrl"
                                 href="https://t.me/mooot_cat_bot?startgroup=true"
+                                data-i18n="createLeague"
                                 >Crea una liga</a
                             >
-                            <a class="button" href="./bot">Más información</a>
+                            <a class="button" href="./bot" data-i18n="moreInfo">Más información</a>
                         </div>
                     </div>
                 </div>
                 <div class="divider"></div>
                 <div class="menu__section">
                     <p class="smallText">
-                        Basado en el juego
+                        <span data-i18n="basedOnGame">Basado en el juego</span>
                         <a
                             href="https://www.nytimes.com/games/wordle/index.html"
                             >Wordle</a
                         >
-                        de <a href="https://www.nytco.com/">TNYT</a>
+                        <span data-i18n="byAuthor">de</span> <a href="https://www.nytco.com/">TNYT</a>
                     </p>
                 </div>
             </div>
@@ -256,75 +261,76 @@
                 <div class="header">
                     <h2 id="stats-title" class="modal__title">...</h2>
                     <img
+                        data-i18n-alt="altCloseModal"
                         alt="Tancar modal"
                         id="modal-close"
                         class="modal__content__close"
-                        alt="Close icon"
                         src="/assets/close.svg"
                     />
                 </div>
                 <section class="stats">
                     <div class="pointedRow">
-                        <p>Palabra</p>
+                        <p data-i18n="word">Palabra</p>
                         <span></span>
                         <a id="dicLink" target="_blank" href="#"
                             ><span id="stats-word"></span>
                             <img
+                                data-i18n-alt="altOpenExternal"
                                 alt="Obrir en una pestanya nova"
                                 src="/assets/open-external.svg"
                         /></a>
                     </div>
                     <div class="pointedRow">
-                        <p>Puntos</p>
+                        <p data-i18n="points">Puntos</p>
                         <span></span>
                         <p>+<span id="stats-points"></span></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Tiempo</p>
+                        <p data-i18n="time">Tiempo</p>
                         <span></span>
                         <p><span id="stats-time"></span></p>
                     </div>
                 </section>
                 <section class="stats">
                     <div class="pointedRow">
-                        <p>Partidas jugadas</p>
+                        <p data-i18n="gamesPlayed">Partidas jugadas</p>
                         <span></span>
                         <p id="stats-games"></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Puntos totales</p>
+                        <p data-i18n="totalPoints">Puntos totales</p>
                         <span></span>
                         <p id="stats-totalPoints"></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Media de puntos</p>
+                        <p data-i18n="averagePoints">Media de puntos</p>
                         <span></span>
                         <p id="stats-averagePoints"></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Media de tiempo</p>
+                        <p data-i18n="averageTime">Media de tiempo</p>
                         <span></span>
                         <p id="stats-averageTime"></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Racha actual</p>
+                        <p data-i18n="currentStreak">Racha actual</p>
                         <span></span>
                         <p id="stats-streak"></p>
                     </div>
                     <div class="pointedRow">
-                        <p>Racha máxima</p>
+                        <p data-i18n="maxStreak">Racha máxima</p>
                         <span></span>
                         <p id="stats-maxStreak"></p>
                     </div>
                 </section>
                 <div class="modal__buttons">
-                    <button class="button--danger" id="shareOpen">
+                    <button class="button--danger" id="shareOpen" data-i18n="shareAttempts">
                         Compartir intentos
-                        <img alt="Perill" src="/assets/caution.svg" />
+                        <img data-i18n-alt="altCaution" alt="Perill" src="/assets/caution.svg" />
                     </button>
-                    <button id="share">
+                    <button id="share" data-i18n="share">
                         Compartir
-                        <img alt="Compartir" src="/assets/share.svg" />
+                        <img data-i18n-alt="altShare" alt="Compartir" src="/assets/share.svg" />
                     </button>
                 </div>
             </div>

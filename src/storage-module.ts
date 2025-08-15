@@ -6,6 +6,7 @@ import {
     getTodayWord,
     loadWordsData,
 } from './words-module.ts'
+import { getCurrentLanguage } from './language-module'
 
 export interface storedRow {
     row: number
@@ -13,8 +14,23 @@ export interface storedRow {
     date: string
 }
 
-export async function loadStoredGame() {
-    const storedData = localStorage.getItem('wardle_es_gamedata')
+function getGameDataKey(): string {
+    const lang = getCurrentLanguage()
+    return `wardle_${lang}_gamedata`
+}
+
+export function getTimeTrialKey(): string {
+    const lang = getCurrentLanguage()
+    return `timetrial-start-${lang}`
+}
+
+export function getTodayTimeKey(): string {
+    const lang = getCurrentLanguage()
+    return `todayTime-${lang}`
+}
+
+export async function loadStoredGame(delayModal: boolean = false) {
+    const storedData = localStorage.getItem(getGameDataKey())
     if (storedData) {
         const storedGame = JSON.parse(storedData)
         await loadWordsData()
@@ -31,21 +47,29 @@ export async function loadStoredGame() {
             storedGame.at(-1).word.toUpperCase() !==
                 getTodayWord().toUpperCase()
 
-        const time = localStorage.getItem('todayTime') || null
+        const time = localStorage.getItem(getTodayTimeKey()) || null
+
+        const showModalWithDelay = () => {
+            if (delayModal) {
+                setTimeout(() => showModal(), 1000)
+            } else {
+                showModal()
+            }
+        }
 
         if (playerWon) {
             fillModalStats(7 - gameboard.currentTry, time)
             editLinkToDictionary(getTodayNiceWord())
             gameboard.setCurrentRow(0)
 
-            showModal()
+            showModalWithDelay()
         } else if (playerLost) {
             fillModalStats(0, time)
             editLinkToDictionary(getTodayNiceWord())
             gameboard.setCurrentRow(0)
             gameboard.setCurrentTry(7)
 
-            showModal()
+            showModalWithDelay()
         } else {
             gameboard.moveToNextRow()
         }
@@ -59,24 +83,24 @@ export function saveToLocalStorage(word: string, row: number) {
         date: new Date().toISOString(),
     }
 
-    const currentStored = localStorage.getItem('wardle_es_gamedata')
+    const currentStored = localStorage.getItem(getGameDataKey())
 
     if (currentStored) {
         const savedData = JSON.parse(currentStored)
         savedData.push(dataToSave)
-        localStorage.setItem('wardle_es_gamedata', JSON.stringify(savedData))
+        localStorage.setItem(getGameDataKey(), JSON.stringify(savedData))
     } else {
-        localStorage.setItem('wardle_es_gamedata', JSON.stringify([dataToSave]))
+        localStorage.setItem(getGameDataKey(), JSON.stringify([dataToSave]))
     }
 }
 
 export function runStorageCheck() {
-    const storedGame = localStorage.getItem('wardle_es_gamedata')
+    const storedGame = localStorage.getItem(getGameDataKey())
     if (storedGame) {
         const storedGameData = JSON.parse(storedGame)
         const storedGameTime = storedGameData[0]?.date
         const cleanedLocalStorage = checkCleanLocalStorage(storedGameTime)
-        if (cleanedLocalStorage) cleanGameboard()
+        if (cleanedLocalStorage) gameboard.cleanGameboard()
     }
 }
 
@@ -86,9 +110,9 @@ export function checkCleanLocalStorage(localDate: string) {
 
     if (date.toDateString() !== today.toDateString()) {
         console.warn('Saved data is not from today, clearing')
-        localStorage.removeItem('wardle_es_gamedata')
-        localStorage.removeItem('timetrial-start')
-        localStorage.removeItem('todayTime')
+        localStorage.removeItem(getGameDataKey())
+        localStorage.removeItem(getTimeTrialKey())
+        localStorage.removeItem(getTodayTimeKey())
 
         return true
     }
@@ -97,26 +121,8 @@ export function checkCleanLocalStorage(localDate: string) {
     return false
 }
 
-export function cleanGameboard() {
-    // Clean game cells
-    for (let row = 1; row <= 6; row++) {
-        for (let col = 1; col <= 5; col++) {
-            const cell = document.querySelector(`#l${row}_${col}`)
-            if (cell) {
-                cell.textContent = ''
-                cell.classList.remove('correct', 'present', 'absent')
-            }
-        }
-    }
-
-    // Clean keyboard
-    document.querySelectorAll('.keyboard__key').forEach((key) => {
-        key.classList.remove('correct', 'present', 'absent')
-    })
-}
-
 export function getTodayTime() {
-    const time = localStorage.getItem('todayTime')
+    const time = localStorage.getItem(getTodayTimeKey())
     if (time && time !== '-') {
         return time
     }

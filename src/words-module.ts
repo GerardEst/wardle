@@ -1,92 +1,108 @@
-let dicc: any
-let diccPromise: Promise<Set<string>> | null = null
-let allWords: { key: string; value: string }
-let wordsPromise: Promise<{ [key: string]: string }> | null = null
-let todayWord: string
-let todayWordIndex: number
+import { getCurrentLanguage, type Language } from './language-module'
+
+let dicc: Record<Language, Set<string>> = { es: null, en: null }
+let diccPromises: Record<Language, Promise<Set<string>> | null> = { es: null, en: null }
+let allWords: Record<Language, { [key: string]: string }> = { es: null, en: null }
+let wordsPromises: Record<Language, Promise<{ [key: string]: string }> | null> = { es: null, en: null }
+let todayWord: Record<Language, string | null> = { es: null, en: null }
+let todayWordIndex: Record<Language, number | null> = { es: null, en: null }
 
 export async function loadDiccData() {
-    if (dicc) {
-        console.log('Dictionary already loaded')
+    const lang = getCurrentLanguage()
+    
+    if (dicc[lang]) {
+        console.log(`Dictionary already loaded for ${lang}`)
         return
     }
 
     // Prevent multiple simultaneous requests
-    if (!diccPromise) {
-        diccPromise = fetchDictionary()
+    if (!diccPromises[lang]) {
+        diccPromises[lang] = fetchDictionary()
     }
 
-    return await diccPromise
+    return await diccPromises[lang]
 }
 
 export async function fetchDictionary() {
-    console.log('Fetching the complete dictionary')
+    const lang = getCurrentLanguage()
+    console.log(`Fetching the complete dictionary for ${lang}`)
 
-    if (dicc) {
-        console.log('Dictionary already loaded')
-        return dicc
+    if (dicc[lang]) {
+        console.log(`Dictionary already loaded for ${lang}`)
+        return dicc[lang]
     }
 
-    const diccFetch = await fetch('/assets/es/dicc.json', {
+    const diccFetch = await fetch(`/assets/${lang}/dicc.json`, {
         cache: 'force-cache',
     })
     const diccJson = await diccFetch.json()
 
-    dicc = new Set(diccJson)
+    dicc[lang] = new Set(diccJson)
 
-    return dicc
+    return dicc[lang]
 }
 
 export async function loadWordsData() {
-    if (allWords) {
-        console.log('Words already loaded')
+    const lang = getCurrentLanguage()
+    
+    if (allWords[lang]) {
+        console.log(`Words already loaded for ${lang}`)
         return
     }
 
     // Prevent multiple simultaneous requests
-    if (!wordsPromise) {
-        wordsPromise = fetchWords()
+    if (!wordsPromises[lang]) {
+        wordsPromises[lang] = fetchWords()
     }
 
-    return await wordsPromise
+    return await wordsPromises[lang]
 }
 
 export async function fetchWords() {
-    console.log('Fetching all the possible words')
+    const lang = getCurrentLanguage()
+    console.log(`Fetching all the possible words for ${lang}`)
 
-    const wordsFetch = await fetch('/assets/es/words.json')
-    allWords = await wordsFetch.json()
+    const wordsFetch = await fetch(`/assets/${lang}/words.json`)
+    allWords[lang] = await wordsFetch.json()
 
-    return allWords
+    return allWords[lang]
 }
 
 export function wordExists(word: string) {
-    if (!dicc) {
+    const lang = getCurrentLanguage()
+    
+    if (!dicc[lang]) {
         console.warn(
-            'Dictionary not loaded yet, returning false for word:',
+            `Dictionary not loaded yet for ${lang}, returning false for word:`,
             word
         )
         return false
     }
-    return dicc.has(word)
+    return dicc[lang].has(word)
 }
 
 export function getTodayWord() {
-    if (todayWord) return todayWord
+    const lang = getCurrentLanguage()
+    
+    if (todayWord[lang]) return todayWord[lang]
 
     const todayIndex = getTodayWordIndex()
-    const wordsArray = Object.keys(allWords)
-    todayWord = wordsArray[todayIndex]
+    const wordsArray = Object.keys(allWords[lang] || {})
+    todayWord[lang] = wordsArray[todayIndex]
 
-    return todayWord
+    return todayWord[lang]
 }
 
 export function getTodayNiceWord() {
-    return allWords[todayWord.toLowerCase()].toUpperCase()
+    const lang = getCurrentLanguage()
+    const word = getTodayWord()
+    return allWords[lang][word.toLowerCase()].toUpperCase()
 }
 
 export function getTodayWordIndex() {
-    if (todayWordIndex) return todayWordIndex
+    const lang = getCurrentLanguage()
+    
+    if (todayWordIndex[lang]) return todayWordIndex[lang]
 
     const startDate = '2025-07-18'
     const currentDate = new Date()
@@ -120,7 +136,15 @@ export function getTodayWordIndex() {
     if (daysElapsed < 0) return 0
 
     // Return index using modulo to cycle through word list
-    todayWordIndex = daysElapsed % Object.keys(allWords).length
+    const wordsLength = allWords[lang] ? Object.keys(allWords[lang]).length : 1
+    todayWordIndex[lang] = daysElapsed % wordsLength
 
-    return todayWordIndex
+    return todayWordIndex[lang]
+}
+
+export function resetLanguageCache() {
+    const lang = getCurrentLanguage()
+    // Reset cached values for current language to force fresh fetch
+    todayWord[lang] = null
+    todayWordIndex[lang] = null
 }

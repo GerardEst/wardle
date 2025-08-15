@@ -1,5 +1,6 @@
 import { updateMenuStat, updateStat } from './dom-utils'
 import { getTodayNiceWord } from './words-module'
+import { getCurrentLanguage, getString } from './language-module'
 
 interface storedStats {
     games: number
@@ -10,8 +11,13 @@ interface storedStats {
     averageTime?: string // Format: hh:mm:ss
 }
 
+function getStatsKey(): string {
+    const lang = getCurrentLanguage()
+    return `stats-${lang}`
+}
+
 export function getStoredStats() {
-    const storedStats = localStorage.getItem('stats')
+    const storedStats = localStorage.getItem(getStatsKey())
     if (!storedStats) {
         console.warn('There are no stored stats')
         return
@@ -26,7 +32,7 @@ export function updateStoredStats(
     console.log('Updating stored stats')
 
     const stats = JSON.parse(
-        localStorage.getItem('stats') || '{}'
+        localStorage.getItem(getStatsKey()) || '{}'
     ) as storedStats
 
     const currentGames = stats?.games || 0
@@ -52,7 +58,7 @@ export function updateStoredStats(
         maxStreak: Math.max(newStreak, currentMaxStreak),
     }
 
-    localStorage.setItem('stats', JSON.stringify(updatedStats))
+    localStorage.setItem(getStatsKey(), JSON.stringify(updatedStats))
 
     return updatedStats
 }
@@ -61,18 +67,18 @@ export function fillModalStats(todayPoints: number, todayTime: string | null) {
     updateStat(
         'title',
         todayPoints === 6
-            ? '🤨 ESCANDALÓSO!'
+            ? `🤨 ${getString('resultPerfect')}`
             : todayPoints === 5
-            ? '🏆 Increíble!'
+            ? `🏆 ${getString('resultAmazing')}`
             : todayPoints === 4
-            ? '🤯 Impresionante!'
+            ? `🤯 ${getString('resultImpressive')}`
             : todayPoints === 3
-            ? '😎 Muy bien!'
+            ? `😎 ${getString('resultGood')}`
             : todayPoints === 2
-            ? '😐 Hecho!'
+            ? `😐 ${getString('resultDone')}`
             : todayPoints === 1
-            ? '😭 Por los pelos!'
-            : '💩 Vaya...'
+            ? `😭 ${getString('resultClose')}`
+            : `💩 ${getString('resultFailed')}`
     )
     updateStat('word', getTodayNiceWord())
     updateStat('points', todayPoints.toString())

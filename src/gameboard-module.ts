@@ -1,6 +1,10 @@
 import { showFeedback, showModal, updateCell, updateKey } from './dom-utils'
 import * as words from './words-module'
-import { saveToLocalStorage } from './storage-module'
+import {
+    saveToLocalStorage,
+    getTimeTrialKey,
+    getTodayTimeKey,
+} from './storage-module'
 import type { storedRow } from './storage-module'
 import {
     editLinkToDictionary,
@@ -8,6 +12,7 @@ import {
     updateMenuData,
     updateStoredStats,
 } from './stats-module'
+import { getCurrentLanguage, getString } from './language-module'
 
 export let currentRow = 1
 export let currentColumn = 1
@@ -51,9 +56,9 @@ export function letterClick(letter: string) {
     if (
         currentColumn === 1 &&
         currentRow === 1 &&
-        !localStorage.getItem('timetrial-start')
+        !localStorage.getItem(getTimeTrialKey())
     ) {
-        localStorage.setItem('timetrial-start', new Date().toISOString())
+        localStorage.setItem(getTimeTrialKey(), new Date().toISOString())
     }
     if (currentColumn > 5) return
     if (currentColumn === 3) {
@@ -84,8 +89,8 @@ export function validateLastRow() {
         saveToLocalStorage(currentWord, currentRow)
 
         const time = calculateTime()
-        localStorage.removeItem('timetrial-start')
-        localStorage.setItem('todayTime', time)
+        localStorage.removeItem(getTimeTrialKey())
+        localStorage.setItem(getTodayTimeKey(), time)
 
         updateStoredStats(7 - currentTry, time)
         fillModalStats(7 - currentTry, time)
@@ -97,7 +102,7 @@ export function validateLastRow() {
             editLinkToDictionary(words.getTodayNiceWord())
         }, 1000)
     } else if (rowStatus === 'invalid') {
-        showFeedback('No és una palabra válida')
+        showFeedback(getString('invalidWord'))
         currentColumn = 1
         cleanRow(currentRow)
     } else {
@@ -106,8 +111,8 @@ export function validateLastRow() {
 
         if (currentRow >= 6) {
             const time = calculateTime()
-            localStorage.removeItem('timetrial-start')
-            localStorage.setItem('todayTime', time)
+            localStorage.removeItem(getTimeTrialKey())
+            localStorage.setItem(getTodayTimeKey(), time)
 
             updateStoredStats(0, time)
             fillModalStats(0, time)
@@ -208,7 +213,7 @@ export function showHints(guess: string, target: string, row: number) {
 }
 
 function calculateTime(): string {
-    const startTime = localStorage.getItem('timetrial-start')
+    const startTime = localStorage.getItem(getTimeTrialKey())
     if (!startTime) return '00:00:00'
 
     const startDate = new Date(startTime)
@@ -223,4 +228,47 @@ function calculateTime(): string {
         2,
         '0'
     )}:${String(seconds).padStart(2, '0')}`
+}
+
+export function cleanGameboard() {
+    // Clear the game board
+    for (let row = 1; row <= 6; row++) {
+        for (let col = 1; col <= 5; col++) {
+            const cell = document.getElementById(`l${row}_${col}`)
+            if (cell) {
+                cell.textContent = ''
+                cell.className = 'wordgrid__cell'
+            }
+        }
+    }
+
+    // Reset keyboard colors
+    const keys = document.querySelectorAll('.keyboard__key')
+    keys.forEach((key) => {
+        key.classList.remove('correct', 'present', 'absent')
+    })
+
+    // Clear feedback
+    const feedback = document.querySelector('.feedback p')
+    if (feedback) feedback.textContent = '...'
+
+    // Close any open modal
+    const modal = document.querySelector('.modal')
+    if (modal && modal.classList.contains('show')) {
+        modal.classList.remove('show')
+    }
+}
+
+export function resetGameState() {
+    currentRow = 1
+    currentColumn = 1
+    currentTry = 1
+    currentWord = ''
+}
+
+export function updateKeyboardLayout() {
+    const ñKey = document.querySelector('[data-key="Ñ"]') as HTMLElement
+    if (ñKey) {
+        ñKey.style.display = getCurrentLanguage() === 'es' ? 'flex' : 'none'
+    }
 }
