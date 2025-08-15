@@ -78,6 +78,16 @@ function updatePageLanguage(): void {
 
     // Update keyboard layout
     updateKeyboardLayout()
+    
+    // Update language selector
+    updateLanguageSelector()
+}
+
+function updateLanguageSelector(): void {
+    const selector = document.getElementById('languageSelector') as HTMLSelectElement
+    if (selector) {
+        selector.value = currentLanguage
+    }
 }
 
 function updateTextContent(): void {
