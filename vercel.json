@@ -2,9 +2,10 @@
     "cleanUrls": true,
     "trailingSlash": false,
     "rewrites": [
+        { "source": "/bot", "destination": "/bot/index.html" },
+        { "source": "/bot/(.*)", "destination": "/bot/index.html" },
         { "source": "/es", "destination": "/index.html" },
         { "source": "/en", "destination": "/index.html" },
-        { "source": "/es/(.*)", "destination": "/index.html" },
-        { "source": "/en/(.*)", "destination": "/index.html" }
+        { "source": "/((?!api|_next|_static|_vercel|bot|assets|favicon\\.png|robots\\.txt|sitemap\\.xml).*)", "destination": "/index.html" }
     ]
 }
