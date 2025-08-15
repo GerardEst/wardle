@@ -73,6 +73,10 @@ export interface Translations {
     // Footer/credits
     basedOnGame: string // "Basado en el juego"
     byAuthor: string // "de"
+
+    // Share message
+    shareGameName: string
+    shareLink: string
 }
 
 export const translations: Record<Language, Translations> = {
@@ -152,6 +156,10 @@ export const translations: Record<Language, Translations> = {
         // Footer/credits
         basedOnGame: 'Basado en el juego',
         byAuthor: 'de',
+
+        // Share message
+        shareGameName: 'wardle_es',
+        shareLink: 'wardle.es/es',
     },
     en: {
         // Meta information
@@ -229,5 +237,9 @@ export const translations: Record<Language, Translations> = {
         // Footer/credits
         basedOnGame: 'Based on the game',
         byAuthor: 'by',
+
+        // Share message
+        shareGameName: 'wardle_en',
+        shareLink: 'wardle.es/en',
     },
 }

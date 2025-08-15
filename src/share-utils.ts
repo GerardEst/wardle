@@ -1,4 +1,5 @@
 import { showFeedback } from './dom-utils'
+import { getString } from './language-module'
 
 function buildResultPattern(open = false, tries: number) {
     let result = ''
@@ -34,9 +35,11 @@ export function shareResult(
     time: string
 ) {
     const resultPattern = buildResultPattern(open, tries)
-    const shareTitle = `#wardle ${wordIndex}`
+    const shareTitle = `#${getString('shareGameName')} ${wordIndex}`
     const shareTries = tries === 7 ? 'X/6' : tries + '/6'
-    const resultText = `${shareTitle}\n🎯 ${shareTries}\n⏳ ${time}\n\n${resultPattern}\nwardle.es`
+    const resultText = `${shareTitle}\n🎯 ${shareTries}\n⏳ ${time}\n\n${resultPattern}\n${getString(
+        'shareLink'
+    )}`
 
     //const noLinkPreview = resultText.replace(/https?:\/\//g, '$&\u200B')
     if (isMobileDevice() && navigator.share) {
@@ -51,7 +54,7 @@ export function shareResult(
         copyToClipboard(resultText).catch((error) => {
             console.error('Error copying to clipboard:', error)
         })
-        showFeedback("Resultado copiado, pegalo donde quieras compartirlo")
+        showFeedback('Resultado copiado, pegalo donde quieras compartirlo')
     }
 }
 
