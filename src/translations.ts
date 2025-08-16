@@ -159,7 +159,7 @@ export const translations: Record<Language, Translations> = {
 
         // Share message
         shareGameName: 'wardle_es',
-        shareLink: 'wardle.day/es',
+        shareLink: 'wardle.es',
     },
     en: {
         // Meta information
