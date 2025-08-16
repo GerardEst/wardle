@@ -30,10 +30,14 @@
         />
 
         <!-- Hreflang and Canonical -->
-        <link rel="canonical" href="https://wardle.es/es/bot" />
-        <link rel="alternate" hreflang="es" href="https://wardle.es/es/bot" />
-        <link rel="alternate" hreflang="en" href="https://wardle.es/en/bot" />
-        <link rel="alternate" hreflang="x-default" href="https://wardle.es/es/bot" />
+        <link rel="canonical" href="https://wardle.day/es/bot" />
+        <link rel="alternate" hreflang="es" href="https://wardle.day/es/bot" />
+        <link rel="alternate" hreflang="en" href="https://wardle.day/en/bot" />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="https://wardle.day/es/bot"
+        />
 
         <!-- Open Graph Meta Tags -->
         <meta
@@ -45,10 +49,10 @@
             content="Transforma tu grupo de Telegram en una competición de Wordle con clasificaciones mensuales, premios, personajes famosos y mucho más."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://wardle.es/es/bot" />
+        <meta property="og:url" content="https://wardle.day/es/bot" />
         <meta
             property="og:image"
-            content="https://wardle.es/assets/moootbot_L.png"
+            content="https://wardle.day/assets/moootbot_L.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -71,7 +75,7 @@
         />
         <meta
             name="twitter:image"
-            content="https://wardle.es/assets/moootbot_L.png"
+            content="https://wardle.day/assets/moootbot_L.png"
         />
         <meta
             name="twitter:image:alt"
@@ -81,7 +85,7 @@
         <!-- Additional SEO Meta Tags -->
         <meta name="theme-color" content="#dc3545" />
         <meta name="msapplication-TileColor" content="#dc3545" />
-        
+
         <style>
             body {
                 margin: 0;
@@ -161,12 +165,19 @@
                 <div style="display: flex; align-items: center; gap: 10px">
                     <h1>Wardle Bot</h1>
                 </div>
-                <div style="display: flex; gap: 10px; align-items: center;">
+                <div style="display: flex; gap: 10px; align-items: center">
                     <a
                         href="/en/bot"
-                        style="padding: 4px 8px; text-decoration: none; color: #666; border: 1px solid #ddd; border-radius: 4px;"
+                        style="
+                            padding: 4px 8px;
+                            text-decoration: none;
+                            color: #666;
+                            border: 1px solid #ddd;
+                            border-radius: 4px;
+                        "
                         title="English version"
-                        >🇺🇸 EN</a>
+                        >🇺🇸 EN</a
+                    >
                     <a
                         href="/es"
                         style="
@@ -185,19 +196,16 @@
             <main role="main" itemscope itemtype="https://schema.org/WebPage">
                 <h1 id="que-es-wardlebot">Qué es Wardle Bot</h1>
                 <p style="font-size: 18px; color: #666; margin-bottom: 20px">
-                    Compite en ligas mensuales de Wordle entre amigos con el
-                    bot de Telegram más divertido.
+                    Compite en ligas mensuales de Wordle entre amigos con el bot
+                    de Telegram más divertido.
                 </p>
                 <p>
                     Este bot de Telegram transforma cualquier grupo en una
                     competición de
-                    <a
-                        href="/es"
-                        title="Juega al Wordle - Juego de palabras"
+                    <a href="/es" title="Juega al Wordle - Juego de palabras"
                         >Wordle</a
                     >, con una clasificación mensual actualizada diariamente,
-                    premios para los mejores jugadores, NPCs
-                    y mucho más.
+                    premios para los mejores jugadores, NPCs y mucho más.
                 </p>
 
                 <h2 id="funcionamento">Cómo funciona Wardle Bot</h2>
@@ -206,8 +214,8 @@
                     Opción 1: Agregar a un chat existente
                 </h3>
                 <p>
-                    Haz clic en el siguiente enlace para agregar Wardle Bot directamente a
-                    tu grupo de Telegram:
+                    Haz clic en el siguiente enlace para agregar Wardle Bot
+                    directamente a tu grupo de Telegram:
                 </p>
                 <p>
                     <a
@@ -229,8 +237,8 @@
                 <h3 id="crear-nuevo-grupo">Opción 2: Crear un nuevo grupo</h3>
                 <ol>
                     <li>
-                        Crea un grupo de Telegram con la gente con la que quieres
-                        compartir las partidas.
+                        Crea un grupo de Telegram con la gente con la que
+                        quieres compartir las partidas.
                     </li>
                     <li>
                         Agrega el bot <strong>"wardle_es_bot"</strong>
@@ -247,8 +255,9 @@
                         border-radius: 0 4px 4px 0;
                     "
                 >
-                    El bot comenzará a trabajar en segundo plano, convirtiendo el grupo
-                    en una liga y agregando las siguientes funcionalidades:
+                    El bot comenzará a trabajar en segundo plano, convirtiendo
+                    el grupo en una liga y agregando las siguientes
+                    funcionalidades:
                 </blockquote>
 
                 <h2 id="funcionalidades">
@@ -259,13 +268,13 @@
                     🏆 Clasificación mensual de los jugadores
                 </h3>
                 <p>
-                    Siempre que un miembro del chat comparta su partida,
-                    se le da una puntuación que puede ir del 0 (si no encontró
-                    la palabra) al 6 (si la encontró en el primer intento).
-                    De esta manera se genera una clasificación con todos los
-                    miembros del chat. Cada final de mes se reparten premios a los
-                    miembros que hayan quedado en el top 3 y se comienza una nueva
-                    liga con las puntuaciones en 0.
+                    Siempre que un miembro del chat comparta su partida, se le
+                    da una puntuación que puede ir del 0 (si no encontró la
+                    palabra) al 6 (si la encontró en el primer intento). De esta
+                    manera se genera una clasificación con todos los miembros
+                    del chat. Cada final de mes se reparten premios a los
+                    miembros que hayan quedado en el top 3 y se comienza una
+                    nueva liga con las puntuaciones en 0.
                 </p>
                 <p><code>/clasificacion</code> - Consulta la clasificación</p>
 
@@ -275,27 +284,28 @@
                 <p>
                     El último día del mes se reparten trofeos a los tres mejores
                     jugadores. Los trofeos varían dependiendo de la liga actual,
-                    y son independientes entre las diferentes ligas - es decir, en caso de participar
-                    en varias ligas, los trofeos solo los tienes dentro del chat de
-                    la liga donde los hayas ganado.
+                    y son independientes entre las diferentes ligas - es decir,
+                    en caso de participar en varias ligas, los trofeos solo los
+                    tienes dentro del chat de la liga donde los hayas ganado.
                 </p>
                 <p><code>/premios</code> - Consulta los trofeos del chat</p>
 
                 <h3 id="extras-famosos">🎭 Personajes famosos</h3>
                 <p>
-                    Se pueden agregar personajes famosos que jugarán autónomamente
-                    cada día y harán más o menos puntuación dependiendo de su
-                    habilidad - diferentes personajes tienen diferentes niveles
-                    de habilidad, algunos serán muy difíciles de ganar mientras
-                    otros quedarán siempre hacia abajo en la clasificación.
+                    Se pueden agregar personajes famosos que jugarán
+                    autónomamente cada día y harán más o menos puntuación
+                    dependiendo de su habilidad - diferentes personajes tienen
+                    diferentes niveles de habilidad, algunos serán muy difíciles
+                    de ganar mientras otros quedarán siempre hacia abajo en la
+                    clasificación.
                 </p>
                 <p>
                     <code>/agregar-personaje</code> - Agrega personajes a la
                     partida
                 </p>
                 <p>
-                    <code>/eliminar-personaje</code> - Elimina personajes de
-                    la partida
+                    <code>/eliminar-personaje</code> - Elimina personajes de la
+                    partida
                 </p>
 
                 <h3 id="top-mundial">🌍 Ranking mundial</h3>
@@ -318,8 +328,8 @@
                 </h2>
                 <ul>
                     <li>
-                        <code>/clasificacion</code> - Muestra la clasificación de
-                        la liga actual
+                        <code>/clasificacion</code> - Muestra la clasificación
+                        de la liga actual
                     </li>
                     <li><code>/leyenda</code> - Muestra la tabla de puntos</li>
                     <li>
@@ -327,16 +337,16 @@
                         personajes a la partida
                     </li>
                     <li>
-                        <code>/eliminar-personaje</code> - Opciones para eliminar
-                        un personaje de la partida
+                        <code>/eliminar-personaje</code> - Opciones para
+                        eliminar un personaje de la partida
                     </li>
                     <li>
                         <code>/premios</code> - Consulta los trofeos virtuales
                         ganados y los que están en juego
                     </li>
                     <li>
-                        <code>/top</code> - Muestra el top 3 de jugadores de todas
-                        las ligas
+                        <code>/top</code> - Muestra el top 3 de jugadores de
+                        todas las ligas
                     </li>
                 </ul>
 
@@ -344,10 +354,10 @@
 
                 <h3 id="permisos-necesarios">Permisos necesarios</h3>
                 <p>
-                    Al agregar Wardle Bot a un grupo, se le da acceso a todos los
-                    mensajes que se compartan a partir de ese momento. Si
-                    no fuera así, no podría reaccionar ni guardar las partidas
-                    que se le comparten.
+                    Al agregar Wardle Bot a un grupo, se le da acceso a todos
+                    los mensajes que se compartan a partir de ese momento. Si no
+                    fuera así, no podría reaccionar ni guardar las partidas que
+                    se le comparten.
                 </p>
 
                 <h3 id="compromiso-privacidad">Compromiso de privacidad</h3>

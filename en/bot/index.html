@@ -30,10 +30,14 @@
         />
 
         <!-- Hreflang and Canonical -->
-        <link rel="canonical" href="https://wardle.es/en/bot" />
-        <link rel="alternate" hreflang="es" href="https://wardle.es/es/bot" />
-        <link rel="alternate" hreflang="en" href="https://wardle.es/en/bot" />
-        <link rel="alternate" hreflang="x-default" href="https://wardle.es/es/bot" />
+        <link rel="canonical" href="https://wardle.day/en/bot" />
+        <link rel="alternate" hreflang="es" href="https://wardle.day/es/bot" />
+        <link rel="alternate" hreflang="en" href="https://wardle.day/en/bot" />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="https://wardle.day/es/bot"
+        />
 
         <!-- Open Graph Meta Tags -->
         <meta
@@ -45,10 +49,10 @@
             content="Transform your Telegram group into a Wordle competition with monthly rankings, prizes, famous characters and much more."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://wardle.es/en/bot" />
+        <meta property="og:url" content="https://wardle.day/en/bot" />
         <meta
             property="og:image"
-            content="https://wardle.es/assets/moootbot_L.png"
+            content="https://wardle.day/assets/moootbot_L.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -71,7 +75,7 @@
         />
         <meta
             name="twitter:image"
-            content="https://wardle.es/assets/moootbot_L.png"
+            content="https://wardle.day/assets/moootbot_L.png"
         />
         <meta
             name="twitter:image:alt"
@@ -81,7 +85,7 @@
         <!-- Additional SEO Meta Tags -->
         <meta name="theme-color" content="#dc3545" />
         <meta name="msapplication-TileColor" content="#dc3545" />
-        
+
         <style>
             body {
                 margin: 0;
@@ -161,12 +165,19 @@
                 <div style="display: flex; align-items: center; gap: 10px">
                     <h1>Wardle Bot</h1>
                 </div>
-                <div style="display: flex; gap: 10px; align-items: center;">
+                <div style="display: flex; gap: 10px; align-items: center">
                     <a
                         href="/es/bot"
-                        style="padding: 4px 8px; text-decoration: none; color: #666; border: 1px solid #ddd; border-radius: 4px;"
+                        style="
+                            padding: 4px 8px;
+                            text-decoration: none;
+                            color: #666;
+                            border: 1px solid #ddd;
+                            border-radius: 4px;
+                        "
                         title="Versión en español"
-                        >🇪🇸 ES</a>
+                        >🇪🇸 ES</a
+                    >
                     <a
                         href="/en"
                         style="
@@ -185,18 +196,14 @@
             <main role="main" itemscope itemtype="https://schema.org/WebPage">
                 <h1 id="what-is-wardlebot">What is Wardle Bot</h1>
                 <p style="font-size: 18px; color: #666; margin-bottom: 20px">
-                    Compete in monthly Wordle leagues with friends using the most
-                    fun Telegram bot.
+                    Compete in monthly Wordle leagues with friends using the
+                    most fun Telegram bot.
                 </p>
                 <p>
                     This Telegram bot transforms any group into a
-                    <a
-                        href="/en"
-                        title="Play Wordle - Word Game"
-                        >Wordle</a
-                    > competition, with a monthly ranking updated daily,
-                    prizes for the best players, NPCs
-                    and much more.
+                    <a href="/en" title="Play Wordle - Word Game">Wordle</a>
+                    competition, with a monthly ranking updated daily, prizes
+                    for the best players, NPCs and much more.
                 </p>
 
                 <h2 id="how-it-works">How Wardle Bot Works</h2>
@@ -205,8 +212,8 @@
                     Option 1: Add to an existing chat
                 </h3>
                 <p>
-                    Click the following link to add Wardle Bot directly to
-                    your Telegram group:
+                    Click the following link to add Wardle Bot directly to your
+                    Telegram group:
                 </p>
                 <p>
                     <a
@@ -246,51 +253,44 @@
                         border-radius: 0 4px 4px 0;
                     "
                 >
-                    The bot will start working in the background, converting the group
-                    into a league and adding the following features:
+                    The bot will start working in the background, converting the
+                    group into a league and adding the following features:
                 </blockquote>
 
-                <h2 id="main-features">
-                    Main Features of Wardle Bot
-                </h2>
+                <h2 id="main-features">Main Features of Wardle Bot</h2>
 
-                <h3 id="monthly-ranking">
-                    🏆 Monthly player ranking
-                </h3>
+                <h3 id="monthly-ranking">🏆 Monthly player ranking</h3>
                 <p>
-                    Whenever a chat member shares their game,
-                    they receive a score ranging from 0 (if they didn't find
-                    the word) to 6 (if they found it on the first try).
-                    This creates a ranking with all chat
-                    members. At the end of each month, prizes are distributed to
-                    members who finished in the top 3 and a new
+                    Whenever a chat member shares their game, they receive a
+                    score ranging from 0 (if they didn't find the word) to 6 (if
+                    they found it on the first try). This creates a ranking with
+                    all chat members. At the end of each month, prizes are
+                    distributed to members who finished in the top 3 and a new
                     league begins with scores reset to 0.
                 </p>
                 <p><code>/clasificacion</code> - Check the ranking</p>
 
-                <h3 id="prize-system">
-                    🥇 Virtual prize and trophy system
-                </h3>
+                <h3 id="prize-system">🥇 Virtual prize and trophy system</h3>
                 <p>
-                    On the last day of the month, trophies are distributed to the three best
-                    players. Trophies vary depending on the current league,
-                    and are independent between different leagues - meaning if you participate
-                    in multiple leagues, you only have trophies within the chat of
-                    the league where you won them.
+                    On the last day of the month, trophies are distributed to
+                    the three best players. Trophies vary depending on the
+                    current league, and are independent between different
+                    leagues - meaning if you participate in multiple leagues,
+                    you only have trophies within the chat of the league where
+                    you won them.
                 </p>
                 <p><code>/premios</code> - Check chat trophies</p>
 
                 <h3 id="famous-characters">🎭 Famous characters</h3>
                 <p>
                     You can add famous characters who will play autonomously
-                    each day and score more or less depending on their
-                    skill - different characters have different skill levels,
-                    some will be very difficult to beat while
-                    others will always rank lower in the standings.
+                    each day and score more or less depending on their skill -
+                    different characters have different skill levels, some will
+                    be very difficult to beat while others will always rank
+                    lower in the standings.
                 </p>
                 <p>
-                    <code>/agregar-personaje</code> - Add characters to the
-                    game
+                    <code>/agregar-personaje</code> - Add characters to the game
                 </p>
                 <p>
                     <code>/eliminar-personaje</code> - Remove characters from
@@ -299,25 +299,24 @@
 
                 <h3 id="global-ranking">🌍 Global ranking</h3>
                 <p>
-                    At any time you can check the top 3 of the current
-                    league among all participants from all chats.
+                    At any time you can check the top 3 of the current league
+                    among all participants from all chats.
                 </p>
                 <p><code>/top</code> - Show global top 3</p>
 
                 <h3 id="automatic-reactions">😊 Automatic reactions</h3>
                 <p>
-                    When a game is shared, the bot reacts with an
-                    emoji to the message that varies depending on how good or bad
-                    the game was to provide visual confirmation that the
-                    game has been registered correctly.
+                    When a game is shared, the bot reacts with an emoji to the
+                    message that varies depending on how good or bad the game
+                    was to provide visual confirmation that the game has been
+                    registered correctly.
                 </p>
 
-                <h2 id="available-commands">
-                    Available Wardle Bot Commands
-                </h2>
+                <h2 id="available-commands">Available Wardle Bot Commands</h2>
                 <ul>
                     <li>
-                        <code>/clasificacion</code> - Show current league ranking
+                        <code>/clasificacion</code> - Show current league
+                        ranking
                     </li>
                     <li><code>/leyenda</code> - Show scoring table</li>
                     <li>
@@ -325,16 +324,15 @@
                         characters to the game
                     </li>
                     <li>
-                        <code>/eliminar-personaje</code> - Options to remove
-                        a character from the game
+                        <code>/eliminar-personaje</code> - Options to remove a
+                        character from the game
                     </li>
                     <li>
-                        <code>/premios</code> - Check virtual trophies
-                        won and those at stake
+                        <code>/premios</code> - Check virtual trophies won and
+                        those at stake
                     </li>
                     <li>
-                        <code>/top</code> - Show top 3 players from all
-                        leagues
+                        <code>/top</code> - Show top 3 players from all leagues
                     </li>
                 </ul>
 
@@ -343,15 +341,14 @@
                 <h3 id="required-permissions">Required permissions</h3>
                 <p>
                     When adding Wardle Bot to a group, it is given access to all
-                    messages shared from that moment on. If
-                    this weren't the case, it couldn't react or save the games
-                    shared with it.
+                    messages shared from that moment on. If this weren't the
+                    case, it couldn't react or save the games shared with it.
                 </p>
 
                 <h3 id="privacy-commitment">Privacy commitment</h3>
                 <p>
-                    No message is consulted or saved unless it's a
-                    shared game or a bot command.
+                    No message is consulted or saved unless it's a shared game
+                    or a bot command.
                 </p>
             </main>
         </div>
