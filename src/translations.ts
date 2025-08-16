@@ -204,7 +204,7 @@ export const translations: Record<Language, Translations> = {
         leagueName: '💃🏻 Major League',
         leaguePeriod: 'August 1 - 31',
         botDescription:
-            'Create a private league in a Telegram group, no registration required, by adding <strong>wardle_en_bot</strong>',
+            'Create a private league in a Telegram group, no registration required, by adding wardle_en_bot',
         telegramBotUrl: 'https://t.me/wardle_en_bot?startgroup=true',
 
         // Prizes
