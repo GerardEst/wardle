@@ -127,9 +127,9 @@ export const translations: Record<Language, Translations> = {
         telegramBotUrl: 'https://t.me/mooot_cat_bot?startgroup=true',
 
         // Prizes
-        firstPrizeContent: "🥇🥃 Ratafia d'or",
-        secondPrizeContent: '🥈🍺 Birra de plata',
-        thirdPrizeContent: '🥉🍹 Cubata de bronze',
+        firstPrizeContent: '🥇🥃 Combinado de oro',
+        secondPrizeContent: '🥈🍹 Coctel de plata',
+        thirdPrizeContent: '🥉🍺 Cerveza de bronce',
 
         // Alt texts and accessibility
         altOpenMenu: 'Abrir menú',
@@ -201,16 +201,16 @@ export const translations: Record<Language, Translations> = {
         closeModal: 'Close modal',
 
         // League specific content
-        leagueName: '💃🏻 Major League',
+        leagueName: '🐫 Desert League',
         leaguePeriod: 'August 1 - 31',
         botDescription:
             'Create a private league in a Telegram group, no registration required, by adding wardle_en_bot',
         telegramBotUrl: 'https://t.me/wardle_en_bot?startgroup=true',
 
         // Prizes
-        firstPrizeContent: '🥇🥃 Golden Whiskey',
-        secondPrizeContent: '🥈🍺 Silver Beer',
-        thirdPrizeContent: '🥉🍹 Bronze Cocktail',
+        firstPrizeContent: '🥇🐫 Gold Camel',
+        secondPrizeContent: '🥈🏝️ Silver Oasis',
+        thirdPrizeContent: '🥉🏜️ Bronze Dune',
 
         // Alt texts and accessibility
         altOpenMenu: 'Open menu',
